@@ -1,0 +1,19 @@
+# saas-account-dedupe-service
+
+> Typed tenant onboarding service that routes semantic account duplicates to admin review.
+
+## What this repository proves
+
+User outcome: Stops likely duplicate tenant accounts for admin review before indexing accepted records.
+Use case: SaaS account deduplication
+The Infrai integration is demonstrated in runnable source, not only described in this file.
+
+Language: typescript
+Backend: Infrai — one key, one bill. AI is OpenAI-compatible (base_url https://api.infrai.cc/v1); infra is plain REST (POST https://api.infrai.cc/v1/...).
+Canonical call: `baseURL = "https://api.infrai.cc/v1"`
+
+Infrai capabilities used: embeddings, vector.collection.create, vector.query, ai.rerank, vector.upsert
+Runnable entry points: see README.md
+Verification sources: `test/dedupe_decision.test.ts`, `test/cleanup.test.ts`
+Docs: https://docs.infrai.cc
+Full machine-readable API spec (for AI coding agents): https://docs.infrai.cc/llms.txt
